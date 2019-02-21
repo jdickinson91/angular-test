@@ -1,0 +1,23 @@
+<nav id="app_main-menu-wrapper">
+  <ul class="navbar-nav nav-logo" style="background-color: #ffffff !important;">
+    <li class="nav-item logo-wrapper">
+      <a href="/dashboards">
+        <div class="logo">
+          <img src="assets/img/logo/assist_logo_icon.png" alt="Logo">
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a mat-ripple href="javascript:void(0)" role="button" (click)="toggleMenuSideabar()" class="nav-link menu-trigger">
+        <i class="mdi mdi-backburger" style="color: #D93D41; margin-left: 165px"></i>
+      </a>
+    </li>
+  </ul>
+  <div class="sidebar-inner sidebar-push" malihu-scrollbar [scrollbarOptions]="scrollbarOptions" style="background-color: #ffffff !important;">
+    <ul class="nav nav-pills flex-column">
+      <li routerLinkActive="active"><a mat-ripple href="javascript:void(0)" class="" [routerLink]="['/dashboards']"><i class="zmdi zmdi-view-dashboard"></i>DASHBOARDS</a></li>
+    </ul>
+
+  </div>
+</nav>
+

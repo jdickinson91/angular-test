@@ -1,0 +1,75 @@
+<div id="content_wrapper" class="rightSidenav1-wrapper">
+    <div class="content">
+        <header class="header-wrapper header-sm">
+            <h1 (click)="toggleSideNav()"> <mat-icon class="link-cursor">menu</mat-icon> DASHBOARD</h1>
+        </header>
+        <mat-sidenav-container class="sidenav-container">
+
+            <mat-sidenav #filterSideNav position="end" class="sidenav" mode="side">
+                <app-filters (close)="filterSideNav.close()" (apply)="onApply($event)"></app-filters>
+            </mat-sidenav>
+
+            <mat-sidenav-content>
+                <div class="content-body">
+                    <div class="row">
+                        <div class="col-sm">
+                            <app-dashboard-card *ngIf="totalStats" [title]="'TOTAL REQUESTS'" [filtered]="totalStats.filtered" [unfiltered]="totalStats.unfiltered"></app-dashboard-card>
+                        </div>
+                        <div class="col-sm">
+                            <app-bar-chart
+                                    [title]="'REQUESTS BY COUNTRY'"
+                                    [width]="700"
+                                    [height]="200"
+                                    [color_scheme]="{domain :['#D93D41', '#A32E31', '#6D1F21', '#360F10', '#000000']}"
+                                    [data]="requestByCountry">
+                            >
+
+                            </app-bar-chart>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <ngx-datatable
+                                    #table
+                                    style="width:100%"
+                                    class="material server-scrolling"
+                                    [rows]="webRequests"
+                                    [columnMode]="columnMode"
+                                    [headerHeight]="headerHeight"
+                                    [footerHeight]="footerHeight"
+                                    [rowHeight]="rowHeight"
+                                    [limit]="limit"
+                                    [rowClass]="setRowClass"
+                                    [externalSorting]="true"
+                                    (sort)="onSort($event)"
+                                    [scrollbarV]="true"
+                            >
+                                <ngx-datatable-column name="IP Address" prop="ip"
+                                                      headerClass="color-primary"></ngx-datatable-column>
+                                <ngx-datatable-column name="Response Type" prop="response_types.code"
+                                                      headerClass="color-primary">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        {{ row.response_type.code}}
+                                    </ng-template>
+
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Response Time" prop="response_time"
+                                                      headerClass="color-primary"></ngx-datatable-column>
+                                <ngx-datatable-column name="Country" prop="countries.name"
+                                                      headerClass="color-primary">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        {{ row.country.name}}
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Path" prop="path"
+                                                      headerClass="color-primary"></ngx-datatable-column>
+
+                            </ngx-datatable>
+                        </div>
+                    </div>
+                </div>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

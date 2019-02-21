@@ -1,0 +1,22 @@
+
+<div class="card card-border">
+    <header class="card-header">
+        <h2 class="card-title text-center">{{title}}</h2>
+    </header>
+    <div class="card-block text-center">
+        <ngx-charts-bar-vertical
+                [view]="view"
+                [scheme]="color_scheme"
+                [results]="data"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="x_axis"
+                [yAxisLabel]="y_axis">
+        </ngx-charts-bar-vertical>
+
+    </div>
+</div>

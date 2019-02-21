@@ -1,0 +1,26 @@
+#app_main-menu-wrapper .nav-logo li .logo img{
+  top: 15px !important;
+  height: 40px !important;
+  width: 40px !important;
+  left: 7px !important;
+}
+
+#app_main-menu-wrapper .sidebar-header {
+  opacity: 1.0 !important;
+  color: #18aa58;
+}
+
+.assist-words{
+  height: 30px;
+  margin-top: -5px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+body #app_wrapper #app_sidebar-left #app_main-menu-wrapper .nav-pills > li.active > a, body #app_wrapper #app_sidebar-left #app_main-menu-wrapper .nav-pills > li.active > a:focus, body #app_wrapper #app_sidebar-left #app_main-menu-wrapper .nav-pills > li.active > a:hover {
+  background-color: #18aa58 !important;
+}
+
+.nav-sub {
+  background-color: #eaeaea !important;
+}

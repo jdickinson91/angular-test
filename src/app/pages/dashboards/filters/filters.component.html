@@ -1,0 +1,51 @@
+<aside id="rightSidenav1">
+    <!-- Optional Sidenav Header-->
+    <header class="header">
+        <h2 class="header-title alt-h2">Dashboard Filters</h2>
+        <span><ul class="actions icons top-right">
+      <li>
+        <button mat-icon-button (click)="onClose()">
+          <mat-icon>keyboard_tab</mat-icon>
+        </button>
+      </li>
+    </ul>
+      </span>
+    </header>
+
+
+    <div class="sidebar">
+        <div class="row">
+            <ng-select
+                    [searchable]="true"
+                    [selectOnTab]="true"
+                    name="country_id"
+                    [items]="countries"
+                    placeholder="COUNTRY"
+                    bindValue="id"
+                    bindLabel="name"
+                    [(ngModel)]="countryId">
+                ></ng-select>
+        </div>
+
+        <div class="row">
+            <ng-select
+                    [searchable]="true"
+                    [selectOnTab]="true"
+                    name="response_type_id"
+                    [items]="responseTypes"
+                    placeholder="RESPONSE TYPE"
+                    bindValue="id"
+                    bindLabel="code"
+                    [(ngModel)]="responseTypeId">
+                ></ng-select>
+        </div>
+
+        <div class="row">
+            <div class="btn btn-default full-width" (click)="onReset()">RESET</div>
+        </div>
+        <div class="row">
+            <div class="btn btn-primary background-red full-width" (click)="onApply()">APPLY</div>
+        </div>
+
+    </div>
+</aside>

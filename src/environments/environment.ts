@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  base_url: 'http://cybertill.test/api',
+  base_url: 'http://cybertilltestbackend.vm:8000/api',
 };

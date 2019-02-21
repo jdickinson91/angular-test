@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9a123625-3d93-4e5e-acc7-b91270f69c90" name="vagrant" url="http://127.0.0.1">
+        <fileTransfer host="127.0.0.1" port="2222" privateKey="C:\Users\jdickinson\Documents\dev\ubuntu-lamp\.vagrant\machines\default\virtualbox\private_key" rootFolder="/home/vagrant/playground/cyberttill-test-frontend" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
